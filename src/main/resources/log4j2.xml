@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+<Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+        <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        <Filters>
+            <ThresholdFilter level="info" onMatch="accept" onMismatch="deny"/>
+        </Filters>
+    </Console>
+
+    <File name="FileLogger" fileName="/Users/llwll/Downloads/logs.log" append="false">
+        <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        <Filters>
+            <ThresholdFilter level="debug" onMatch="accept" onMismatch="deny"/>
+        </Filters>
+    </File>
+</Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileLogger"/>
+        </Root>
+    </Loggers>
+</Configuration>
